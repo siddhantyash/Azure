@@ -13,7 +13,7 @@ pool:
 # Define variables for reusability and easy configuration
 variables:
   javaVersion: '17' # The Java version to use
-  mavenVersion: '3.8.8' # The Maven version to use
+  mavenVersion: '3.5.0' # The Maven version to use
 
 # Define a single stage for building and testing
 stages:
@@ -52,7 +52,7 @@ stages:
     - task: Maven@4
       displayName: 'Maven Build and Run All Tests'
       inputs:
-        mavenPomFile: 'pom.xml' # Path to your main pom.xml
+        mavenPomFile: '/product/pom.xml' # Path to your main pom.xml
         goals: 'clean install' # This goal covers build, package, and runs both unit and integration tests
         options: '-Dmaven.test.skip=false' # Ensures tests are not skipped
         publishJUnitResults: false # We will use PublishTestResults task explicitly for more control
