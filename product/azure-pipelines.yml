@@ -92,7 +92,7 @@ stages:
 
       inputs:
 
-        mavenPomFile: 'pom.xml' # Path to your main pom.xml
+        mavenPomFile: 'product/pom.xml' # Path to your main pom.xml
 
         goals: 'clean install' # This goal covers build, package, and runs both unit and integration tests
 
@@ -118,7 +118,7 @@ stages:
 
         failTaskOnFailedTests: true # Fail the pipeline if any unit tests fail
 
-        testRunTitle: 'MyProductApp Unit Tests'
+        testRunTitle: 'ProductApp Unit Tests'
  
     # --- Publish Integration Test Results ---
 
