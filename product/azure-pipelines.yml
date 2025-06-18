@@ -32,7 +32,7 @@ stages:
     - task: Maven@4
       displayName: 'Maven Build and Run All Tests'
       inputs:
-        mavenPomFile: 'pom.xml' # We will correct this after checking debug output
+        mavenPomFile: '/product/pom.xml' # We will correct this after checking debug output
         goals: 'clean install'
         options: '-Dmaven.test.skip=false'
         publishJUnitResults: false
