@@ -22,7 +22,7 @@ variables:
 
   javaVersion: '17' # The Java version to use
 
-  mavenVersion: '3.8.8' # The Maven version to use
+  mavenVersion: '3.5.0' # The Maven version to use
  
 # Define a single stage for building and testing
 
