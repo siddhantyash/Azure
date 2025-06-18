@@ -14,13 +14,15 @@ stages:
       displayName: 'DEBUG: List Repository Files'
 
     # --- Your existing Maven tasks will follow here ---
-    - task: JavaToolInstaller@0
+   - task: JavaToolInstaller@0
       displayName: 'Install Java JDK $(javaVersion)'
       inputs:
-        versionSpec: $(javaVersion)
+        versionSpec: $(javaVersion) # This will typically be '17' as per our example
         jdkArchitectureOption: 'x64'
-        jdkSourceOption: 'PreInstalled'
-        cleanDestinationDirectory: true
+        # --- CHANGE THIS LINE ---
+        jdkSourceOption: 'ToolInstaller' # This tells Azure DevOps to download/install if needed
+        # --- END CHANGE ---
+        cleanDestinationDirectory: true # Cleans the target directory before installation
 
     - task: Maven@4
       displayName: 'Install Maven $(mavenVersion)'
