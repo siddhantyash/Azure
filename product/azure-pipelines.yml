@@ -92,7 +92,7 @@ stages:
 
       inputs:
 
-        mavenPomFile: 'product/pom.xml' # Path to your main pom.xml
+        mavenPomFile: '/pom.xml' # Path to your main pom.xml
 
         goals: 'clean install' # This goal covers build, package, and runs both unit and integration tests
 
