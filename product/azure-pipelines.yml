@@ -58,7 +58,7 @@ stages:
     - task: Maven@4
       displayName: 'Maven Build and Run All Tests'
       inputs:
-        mavenPomFile: 'product/pom.xml' # Path to your main pom.xml
+        mavenPomFile: '/home/vsts/work/1/s/product/pom.xml' # Path to your main pom.xml
         goals: 'clean install' # This goal covers build, package, and runs both unit and integration tests
         options: '-Dmaven.test.skip=false' # Ensures tests are not skipped
         publishJUnitResults: false # We will use PublishTestResults task explicitly for more control
