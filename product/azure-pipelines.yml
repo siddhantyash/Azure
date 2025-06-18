@@ -25,6 +25,12 @@ stages:
     steps:
     - checkout: self # Checkout the source code from your repository
 
+    - script: |
+        echo "--- Listing files in the pipeline agent's working directory ---"
+        ls -R $(System.DefaultWorkingDirectory)
+        echo "--- End of file list ---"
+      displayName: 'DEBUG: List Repository Files'
+
     # --- Install Java Development Kit ---
     - task: JavaToolInstaller@0
       displayName: 'Install Java JDK $(javaVersion)'
